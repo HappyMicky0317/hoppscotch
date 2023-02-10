@@ -1,0 +1,45 @@
+{
+  "name": "@hoppscotch/data",
+  "version": "0.4.4",
+  "description": "Data Types, Validations and Migrations for Hoppscotch Public Data Structures",
+  "type": "module",
+  "main": "dist/hoppscotch-data.cjs",
+  "module": "dist/hoppscotch-data.js",
+  "types": "./dist/index.d.ts",
+  "files": [ "dist/*" ],
+  "scripts": {
+    "build:code": "vite build",
+    "build:decl": "tsc --project tsconfig.decl.json",
+    "build": "pnpm run build:code && pnpm run build:decl",
+    "prepare": "pnpm run build:code && pnpm run build:decl",
+    "do-typecheck": "pnpm exec tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/hoppscotch-data.js",
+      "require": "./dist/hoppscotch-data.cjs",
+      "type": "./dist/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoppscotch/hoppscotch.git"
+  },
+  "author": "Hoppscotch (support@hoppscotch.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoppscotch/hoppscotch/issues"
+  },
+  "homepage": "https://github.com/hoppscotch/hoppscotch#readme",
+  "devDependencies": {
+    "@types/lodash": "^4.14.181",
+    "typescript": "^4.6.3",
+    "vite": "^3.2.3"
+  },
+  "dependencies": {
+    "fp-ts": "^2.11.10",
+    "io-ts": "^2.2.16",
+    "lodash": "^4.17.21",
+    "parser-ts": "^0.6.16"
+  }
+}

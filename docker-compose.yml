@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  web:
+    build:
+      context: .
+    volumes:
+      - "./.hoppscotch:/app/.hoppscotch"
+      - "./assets:/app/assets"
+      - "./directives:/app/directives"
+      - "./layouts:/app/layouts"
+      - "./middleware:/app/middleware"
+      - "./pages:/app/pages"
+      - "./plugins:/app/plugins"
+      - "./static:/app/static"
+      - "./store:/app/store"
+      - "./components:/app/components"
+      - "./helpers:/app/helpers"
+    ports:
+      - "3000:3000"
+    environment:
+      HOST: 0.0.0.0
+    command: "pnpm run dev"
